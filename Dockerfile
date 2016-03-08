@@ -1,17 +1,23 @@
-FROM java:8-jre
+FROM java:9-jre
 
 MAINTAINER Jean-Philippe Chateau "contact@jpchateau.com"
 
+# Make sure we don't get notifications we can't answer during building
 ENV DEBIAN_FRONTEND noninteractive
-
-RUN apt-get update
-
-RUN cd && wget https://s3.amazonaws.com/Minecraft.Download/versions/1.9/minecraft_server.1.9.jar
 
 VOLUME ["/data"]
 
+# Download and install the required packages
+RUN apt-get update
+
+# Minecraft port
 EXPOSE 25565
 
 WORKDIR /data
 
-CMD ["/bin/bash"]
+COPY ./Resources/start.sh /start.sh
+
+# Fix all permissions
+RUN chmod +x /start.sh
+
+CMD ["/start.sh"]
