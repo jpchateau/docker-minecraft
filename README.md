@@ -1,18 +1,19 @@
-Docker Minecraft
+Docker minecraft
 ================
 
-Docker minecraft is a docker image to run a minecraft server.
+Docker-minecraft is a docker image to run a minecraft server.
 
 ## Build
 
 ```bash
-git clone git@github.com:jpchateau/docker-minecraft-server.git
-cd docker-minecraft-server.git
-docker build -t jpchateau/docker-minecraft-server .
+git clone git@github.com:jpchateau/docker-minecraft.git
+cd docker-minecraft
+docker build -t jpchateau/docker-minecraft .
 ```
 
 ## Usage
 
 ```bash
-sudo docker run -d=true --name minecraft -p=25565:25565 -v=/minecraft:/data jpchateau/docker-minecraft-server /start.sh
+sudo mkdir /minecraft
+sudo docker run -d=true --name minecraft -p=25565:25565 -v=/minecraft:/data jpchateau/docker-minecraft
 ```
