@@ -15,5 +15,5 @@ docker build -t jpchateau/docker-minecraft .
 
 ```bash
 mkdir /home/$USER/minecraft
-docker run -d=true --name minecraft -p=25565:25565 -v=/home/$USER/minecraft:/data jpchateau/docker-minecraft
+docker run -d --name minecraft -p=25565:25565 -v=/home/$USER/minecraft:/data jpchateau/docker-minecraft
 ```

@@ -9,6 +9,7 @@ VOLUME ["/data"]
 # Forward apporpriate ports
 EXPOSE 25565
 
+# Download minecraft
 RUN wget -O /minecraft_server.jar https://s3.amazonaws.com/Minecraft.Download/versions/${version}/minecraft_server.${version}.jar
 
 COPY ./Resources/start.sh /start
