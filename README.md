@@ -1,19 +1,28 @@
-Docker minecraft
-================
+## About Minecraft
 
-Docker-minecraft is a docker image to run a minecraft server.
+Minecraft is a sandbox construction game.
 
-## Build
+## About this image
 
+This image intends to be stable and light.
+
+### Build
+
+```bash
+docker pull jpchateau/minecraft
+```
+or
 ```bash
 git clone git@github.com:jpchateau/docker-minecraft.git
 cd docker-minecraft
-docker build -t jpchateau/docker-minecraft .
+docker build -t jpchateau/minecraft .
 ```
 
-## Usage
+### Usage
 
 ```bash
-mkdir /home/$USER/minecraft
-docker run -d --name minecraft -p=25565:25565 -v=/home/$USER/minecraft:/data jpchateau/docker-minecraft
+mkdir ~/minecraft
+docker run -d --name minecraft -p=25565:25565 -v=~/minecraft:/data jpchateau/minecraft
 ```
+
+The mounted volume contains your server data (world, configuration and logs).
