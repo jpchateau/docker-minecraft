@@ -21,8 +21,8 @@ docker build -t jpchateau/minecraft .
 ### Usage
 
 ```bash
-mkdir ~/minecraft
-docker run -d --name minecraft -p=25565:25565 -v=~/minecraft:/data jpchateau/minecraft
+mkdir /home/$USER/minecraft
+docker run -d --name minecraft -p=25565:25565 -v=/home/$USER/minecraft:/data jpchateau/minecraft
 ```
 
 The mounted volume contains your server data (world, configuration and logs).

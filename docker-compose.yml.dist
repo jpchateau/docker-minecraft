@@ -1,0 +1,10 @@
+data:
+  image: busybox
+  volumes:
+    - /home/$USER/minecraft:/data
+minecraft:
+  image: jpchateau/minecraft:1.9
+  volumes_from:
+    - data
+  ports:
+    - 25565:25565
